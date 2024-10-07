@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: Posadev API demo with openapi and stoplight
+  version: v1
+  description: This is a demo API for Posadev with openapi and stoplight integration
+  contact:
+    email: oswaldo.rosales.a@gmail.com
+    name: Oswaldo Rosales
+
+servers:
+  - url: 'http://localhost:8080'
+    description: 'Development server running on localhost'
+
+paths:
+  /v1/sample/hello:
+    get:
+      summary: Returns a simple hello response.
+      description:  Returns a simple hello response.
+      operationId: getHello
+      tags:
+        - Sample
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HelloResponse'
+
+
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        fields:
+          type: string
+        description:
+          type: string
+    HelloResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        description:
+          type: string
+
+

@@ -1,4 +1,4 @@
-package com.posadev.api;
+package com.posadev.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
